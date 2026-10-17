@@ -600,3 +600,89 @@ a.tag:hover {
   text-shadow: none;
   transform: rotate(90deg);
 }
+
+.theme-dark {
+  --wonder-splash-bg: #100c24;
+}
+
+.theme-light {
+  --wonder-splash-bg: #f6f2ff;
+}
+
+.app-container::after {
+  content: "\2726";
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.4rem;
+  color: var(--wonder-star, #f0d682);
+  background:
+    radial-gradient(circle at 50% 45%, rgba(124, 92, 214, 0.35), transparent 55%),
+    radial-gradient(circle at 20% 80%, rgba(143, 211, 224, 0.08), transparent 45%),
+    var(--wonder-splash-bg, #100c24);
+  pointer-events: none;
+  animation:
+    wonder-splash 3s cubic-bezier(0.7, 0, 0.3, 1) forwards,
+    wonder-pulse 1.1s ease-in-out infinite;
+}
+
+.app-container::before {
+  content: "";
+  position: fixed;
+  z-index: 100000;
+  left: 50%;
+  top: 50%;
+  width: 96px;
+  height: 96px;
+  margin: -48px 0 0 -48px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: var(--wonder-star, #f0d682);
+  border-right-color: #a78bfa;
+  box-shadow: 0 0 22px rgba(167, 139, 250, 0.35);
+  pointer-events: none;
+  animation:
+    wonder-ring-spin 1.1s linear infinite,
+    wonder-ring-exit 3s ease forwards;
+}
+
+.app-container > .horizontal-main-container {
+  animation: wonder-enter 1.1s cubic-bezier(0.2, 0.7, 0.2, 1) 1.9s backwards;
+}
+
+@keyframes wonder-splash {
+  0%, 60% { opacity: 1; scale: 1; filter: blur(0); visibility: visible; }
+  100% { opacity: 0; scale: 1.7; filter: blur(14px); visibility: hidden; }
+}
+
+@keyframes wonder-pulse {
+  0%, 100% { text-shadow: 0 0 18px var(--wonder-star, #f0d682), 0 0 50px rgba(167, 139, 250, 0.5); }
+  50% { text-shadow: 0 0 34px var(--wonder-star, #f0d682), 0 0 90px rgba(167, 139, 250, 0.85); }
+}
+
+@keyframes wonder-ring-spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes wonder-ring-exit {
+  0%, 55% { opacity: 1; scale: 1; }
+  100% { opacity: 0; scale: 4; visibility: hidden; }
+}
+
+@keyframes wonder-enter {
+  from { opacity: 0; scale: 0.97; filter: blur(6px); }
+  to { opacity: 1; scale: 1; filter: blur(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .app-container::before,
+  .app-container::after {
+    display: none;
+  }
+  .app-container > .horizontal-main-container {
+    animation: none;
+  }
+}

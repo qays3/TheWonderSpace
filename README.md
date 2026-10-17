@@ -42,6 +42,8 @@ The name comes from the feeling of looking at the stars: calm, curious, and a li
 
 **Constellation touches.** Top-level headings carry a small star and a soft gradient, links sparkle when you hover them, and horizontal rules (`---`) become a line with a glowing star in the middle.
 
+**Warp-in entrance.** When Obsidian opens, a soft cosmic splash shows a spinning orbit around a glowing star, then warps away as your vault fades in. It stays off if your system has reduced motion turned on.
+
 **Frosted glass.** Menus, popups, and the command palette are softly blurred, like looking through a window at the night sky.
 
 ## Color palette
