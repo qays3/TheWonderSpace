@@ -370,29 +370,6 @@ button.mod-cta {
   width: fit-content;
 }
 
-.markdown-rendered h1:not(.inline-title)::before {
-  content: "\2726";
-  margin-right: 0.45em;
-  font-size: 0.6em;
-  vertical-align: 0.2em;
-  -webkit-text-fill-color: var(--wonder-star);
-}
-
-.markdown-rendered h2::before {
-  content: "\2727";
-  margin-right: 0.45em;
-  font-size: 0.65em;
-  vertical-align: 0.15em;
-  color: var(--wonder-star-soft);
-}
-
-.markdown-rendered h3::before {
-  content: "\2022";
-  margin-right: 0.5em;
-  color: var(--wonder-star);
-  opacity: 0.8;
-}
-
 .markdown-rendered hr {
   height: 1px;
   margin: 2em 0;
@@ -518,12 +495,6 @@ a.tag:hover {
   filter: drop-shadow(0 0 6px var(--interactive-accent));
 }
 
-.markdown-rendered .heading-collapse-indicator,
-.markdown-rendered .collapse-indicator.heading-collapse-indicator,
-.cm-fold-indicator {
-  display: none;
-}
-
 .nav-file-title,
 .nav-folder-title {
   position: relative;
@@ -555,4 +526,77 @@ a.tag:hover {
 .nav-file-title:not(.is-active):hover,
 .nav-folder-title:hover {
   background-color: var(--background-modifier-hover);
+}
+
+.markdown-rendered h1 { --wonder-ind: var(--wonder-star); }
+.markdown-rendered h2 { --wonder-ind: var(--wonder-star-soft); }
+.markdown-rendered h3,
+.markdown-rendered h4,
+.markdown-rendered h5,
+.markdown-rendered h6 { --wonder-ind: var(--text-accent); }
+
+.markdown-rendered .heading-collapse-indicator {
+  position: static !important;
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  margin: 0 0.45em 0 0 !important;
+  padding: 0;
+  opacity: 1 !important;
+  transform: none !important;
+  cursor: pointer;
+  vertical-align: 0.15em;
+  font-size: 0.6em;
+  line-height: 1;
+}
+
+.markdown-rendered .heading-collapse-indicator svg,
+.cm-fold-indicator .collapse-indicator svg {
+  display: none;
+}
+
+.markdown-rendered .heading-collapse-indicator::before {
+  content: "\2726";
+  color: var(--wonder-ind);
+  -webkit-text-fill-color: var(--wonder-ind);
+  text-shadow: 0 0 10px var(--wonder-ind);
+  transition: transform 0.35s ease, opacity 0.25s ease, text-shadow 0.25s ease;
+}
+
+.markdown-rendered .heading-collapse-indicator:hover::before {
+  transform: scale(1.3) rotate(25deg);
+}
+
+.markdown-rendered .heading-collapse-indicator.is-collapsed::before {
+  content: "\2727";
+  opacity: 0.55;
+  text-shadow: none;
+  transform: rotate(90deg);
+}
+
+.markdown-rendered .heading-collapse-indicator.is-collapsed:hover::before {
+  opacity: 1;
+  transform: rotate(90deg) scale(1.3);
+}
+
+.cm-fold-indicator .collapse-indicator {
+  cursor: pointer;
+}
+
+.cm-fold-indicator .collapse-indicator::before {
+  content: "\2726";
+  font-size: 0.8em;
+  color: var(--wonder-star);
+  text-shadow: 0 0 8px var(--wonder-star);
+  transition: transform 0.35s ease, opacity 0.25s ease;
+}
+
+.cm-fold-indicator.is-collapsed .collapse-indicator::before,
+.cm-fold-indicator .collapse-indicator.is-collapsed::before {
+  content: "\2727";
+  opacity: 0.6;
+  text-shadow: none;
+  transform: rotate(90deg);
 }
