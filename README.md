@@ -13,6 +13,7 @@ The name comes from the feeling of looking at the stars: calm, curious, and a li
 - **Calm purple palette.** Deep indigo-violet in dark mode, soft lilac in light mode.
 - **Easy on the eyes.** Contrast is balanced for long writing sessions, with no pure black and no pure white.
 - **Lavender heading scale.** Headings shift gently from light to deeper violet, so structure is clear without being harsh.
+- **Shining stars.** A few quiet stars breathe softly, some sparkle now and then, and a shooting star passes once in a while. Dark mode only, and it stays still if your system has reduced motion on.
 - **Starry graph view.** Nodes and links are styled like stars and constellations.
 - **Dark and light modes.** *Night Sky* (dark) and *Soft Dawn* (light).
 - **Rounded, soft shapes.** Code blocks, quotes, and buttons use smooth corners.

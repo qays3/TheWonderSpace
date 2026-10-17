@@ -155,59 +155,181 @@ body {
   box-shadow: inset 2px 0 0 var(--interactive-accent);
 }
 
+html:has(body.theme-dark)::before,
+html:has(body.theme-dark)::after,
 body.theme-dark::before,
 body.theme-dark::after {
+  display: block;
   content: "";
   position: fixed;
-  inset: 0;
   z-index: 1;
   pointer-events: none;
-  will-change: opacity;
 }
 
 body.theme-dark::before {
+  inset: 0;
   background-image:
-    radial-gradient(1.5px 1.5px at 40px 60px, #ffffff 50%, transparent 100%),
-    radial-gradient(1px 1px at 120px 210px, #ffffff 50%, transparent 100%),
-    radial-gradient(2px 2px at 260px 90px, #ffffff 50%, transparent 100%),
-    radial-gradient(1px 1px at 330px 300px, #ffffff 50%, transparent 100%),
-    radial-gradient(1.5px 1.5px at 180px 350px, #ffffff 50%, transparent 100%),
-    radial-gradient(1px 1px at 390px 150px, #ffffff 50%, transparent 100%),
-    radial-gradient(4px 4px at 260px 90px, rgba(255, 255, 255, 0.35), transparent 100%);
-  background-size: 420px 420px;
-  opacity: 0.55;
-  animation: wonder-twinkle-a 5s ease-in-out infinite alternate;
+    radial-gradient(1px 1px at 70px 110px, #ffffff 50%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 340px 60px, #ffffff 50%, transparent 100%),
+    radial-gradient(1px 1px at 520px 330px, #ffffff 50%, transparent 100%),
+    radial-gradient(1px 1px at 210px 450px, #dcd0ff 50%, transparent 100%);
+  background-size: 640px 560px;
+  opacity: 0.45;
+  animation: wonder-breathe 9s ease-in-out infinite alternate;
 }
 
 body.theme-dark::after {
+  inset: 0;
   background-image:
-    radial-gradient(1px 1px at 90px 130px, #ffffff 50%, transparent 100%),
-    radial-gradient(1.5px 1.5px at 310px 40px, #ffffff 50%, transparent 100%),
-    radial-gradient(1px 1px at 470px 260px, #ffffff 50%, transparent 100%),
-    radial-gradient(2px 2px at 150px 440px, #ffffff 50%, transparent 100%),
-    radial-gradient(1px 1px at 540px 500px, #ffffff 50%, transparent 100%),
-    radial-gradient(1.5px 1.5px at 380px 380px, #dcd0ff 50%, transparent 100%),
-    radial-gradient(4px 4px at 150px 440px, rgba(255, 255, 255, 0.3), transparent 100%);
-  background-size: 610px 610px;
-  opacity: 0.35;
-  animation: wonder-twinkle-b 7s ease-in-out -3s infinite alternate;
+    radial-gradient(1px 11px at 160px 120px, #ffffff, transparent),
+    radial-gradient(11px 1px at 160px 120px, #ffffff, transparent),
+    radial-gradient(6px 6px at 160px 120px, rgba(255, 255, 255, 0.55), transparent),
+    radial-gradient(1px 8px at 620px 400px, #e6dcff, transparent),
+    radial-gradient(8px 1px at 620px 400px, #e6dcff, transparent),
+    radial-gradient(5px 5px at 620px 400px, rgba(230, 220, 255, 0.5), transparent);
+  background-size: 900px 620px;
+  opacity: 0;
+  animation: wonder-shine 10s ease-in-out infinite;
 }
 
-@keyframes wonder-twinkle-a {
-  0% { opacity: 0.2; }
-  50% { opacity: 0.6; }
-  100% { opacity: 0.9; }
+html:has(body.theme-dark)::before {
+  inset: 0;
+  background-image:
+    radial-gradient(1px 9px at 420px 210px, #ffffff, transparent),
+    radial-gradient(9px 1px at 420px 210px, #ffffff, transparent),
+    radial-gradient(5px 5px at 420px 210px, rgba(255, 255, 255, 0.5), transparent),
+    radial-gradient(1px 12px at 90px 520px, #d7f1f6, transparent),
+    radial-gradient(12px 1px at 90px 520px, #d7f1f6, transparent),
+    radial-gradient(6px 6px at 90px 520px, rgba(215, 241, 246, 0.5), transparent);
+  background-size: 1100px 700px;
+  opacity: 0;
+  animation: wonder-shine 14s ease-in-out -6s infinite;
 }
 
-@keyframes wonder-twinkle-b {
-  0% { opacity: 0.9; }
-  50% { opacity: 0.4; }
-  100% { opacity: 0.15; }
+html:has(body.theme-dark)::after {
+  top: 14%;
+  left: -220px;
+  width: 160px;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.9));
+  border-radius: 2px;
+  transform-origin: left center;
+  opacity: 0;
+  animation: wonder-shooting 24s linear 4s infinite;
+}
+
+@keyframes wonder-breathe {
+  0% { opacity: 0.25; }
+  100% { opacity: 0.65; }
+}
+
+@keyframes wonder-shine {
+  0%, 50%, 100% { opacity: 0; }
+  68% { opacity: 1; }
+  84% { opacity: 0.15; }
+}
+
+@keyframes wonder-shooting {
+  0% { opacity: 0; transform: rotate(24deg) translateX(0); }
+  1% { opacity: 1; }
+  5% { opacity: 0; transform: rotate(24deg) translateX(140vw); }
+  100% { opacity: 0; transform: rotate(24deg) translateX(140vw); }
 }
 
 @media (prefers-reduced-motion: reduce) {
   body.theme-dark::before,
-  body.theme-dark::after {
+  body.theme-dark::after,
+  html:has(body.theme-dark)::before {
     animation: none;
+    opacity: 0.45;
   }
+  html:has(body.theme-dark)::after {
+    display: none;
+  }
+}
+
+.theme-dark .view-content {
+  background-image:
+    radial-gradient(ellipse at 100% 0%, rgba(124, 92, 214, 0.14), transparent 55%),
+    radial-gradient(ellipse at 0% 100%, rgba(143, 211, 224, 0.05), transparent 50%);
+}
+
+.theme-dark .workspace-leaf-content[data-type="graph"] .view-content {
+  background-image: radial-gradient(circle at 50% 50%, rgba(124, 92, 214, 0.16), transparent 65%);
+}
+
+.markdown-rendered h1,
+.cm-s-obsidian .HyperMD-header-1 {
+  padding-bottom: 0.2em;
+  border-bottom: 1px solid var(--background-modifier-border);
+}
+
+.markdown-rendered :not(pre) > code,
+.cm-s-obsidian span.cm-inline-code {
+  padding: 0.1em 0.4em;
+  border-radius: var(--radius-s);
+  background-color: var(--code-background);
+}
+
+.markdown-rendered table th {
+  background-color: var(--background-primary-alt);
+  color: var(--text-accent);
+}
+
+.markdown-rendered table th,
+.markdown-rendered table td {
+  border-color: var(--background-modifier-border);
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--interactive-accent);
+  border-color: var(--interactive-accent);
+}
+
+.callout {
+  border-radius: var(--radius-m);
+  border: 1px solid var(--background-modifier-border);
+  --callout-color: 167, 139, 250;
+}
+
+.workspace-tab-header.is-active {
+  box-shadow: inset 0 2px 0 var(--interactive-accent);
+}
+
+.workspace-tab-header:hover {
+  background-color: var(--background-modifier-hover);
+}
+
+.status-bar {
+  background-color: transparent;
+  border-top: 1px solid var(--background-modifier-border);
+  color: var(--text-faint);
+}
+
+.modal,
+.menu,
+.suggestion-container {
+  border-radius: var(--radius-l);
+  border: 1px solid var(--background-modifier-border-hover);
+  box-shadow: 0 12px 40px rgba(10, 6, 30, 0.45);
+}
+
+.theme-dark .modal,
+.theme-dark .menu,
+.theme-dark .suggestion-container {
+  background-color: #1d1838;
+}
+
+button.mod-cta {
+  box-shadow: 0 0 18px rgba(167, 139, 250, 0.3);
+}
+
+.theme-dark ::selection {
+  background-color: rgba(167, 139, 250, 0.3);
+}
+
+.vertical-tab-nav-item.is-active,
+.nav-file-title.is-active,
+.tree-item-self.is-active {
+  color: var(--text-accent);
 }
