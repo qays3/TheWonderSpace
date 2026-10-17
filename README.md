@@ -4,8 +4,6 @@ A calm, cosmic theme for [Obsidian](https://obsidian.md), built around soft purp
 
 Not loud, not neon, not tiring. Just a quiet, comfortable space to think and write in, like looking up at a clear night sky.
 
-> Screenshot goes here: `![TheWonderSpace](screenshot.png)`
-
 ## Why "Wonder"?
 
 The name comes from the feeling of looking at the stars: calm, curious, and a little amazed. The theme tries to give you that same feeling while you work. Deep violet backgrounds, gentle lavender text, and small touches of warm gold and soft cyan, like distant stars.
@@ -71,15 +69,6 @@ You can tweak the theme with a CSS snippet in `.obsidian/snippets/`. For example
 
 - Set **Appearance → Base color scheme** to *Adapt to system* so the theme follows your day and night.
 - The theme uses **Inter** for text. If it isn't installed, it falls back to your system font.
-
-## Roadmap
-
-- [ ] Callouts styling
-- [ ] Tabs and status bar polish
-- [ ] Canvas colors
-- [ ] Table and checkbox styling
-- [ ] Mobile testing
-- [ ] Style Settings plugin support
 
 ## Contributing
 
