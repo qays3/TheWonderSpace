@@ -19,6 +19,31 @@ The name comes from the feeling of looking at the stars: calm, curious, and a li
 - **Rounded, soft shapes.** Code blocks, quotes, and buttons use smooth corners.
 - **Built on Obsidian's CSS variables.** Stable across updates and easy to customize.
 
+## Made for wonder
+
+**Moon-phase tasks.** Checkboxes are little moons.
+
+```
+- [ ] New moon (to do)
+- [/] Half moon (in progress)
+- [x] Full moon (done)
+- [-] Dark moon (cancelled)
+- [!] Comet (important)
+```
+
+**Cosmic callouts.** Four extra callout types on top of the usual ones:
+
+```
+> [!star] Something worth remembering
+> [!nebula] An idea taking shape
+> [!moon] A quiet thought
+> [!launch] Time to ship
+```
+
+**Constellation touches.** Top-level headings carry a small star and a soft gradient, links sparkle when you hover them, and horizontal rules (`---`) become a line with a glowing star in the middle.
+
+**Frosted glass.** Menus, popups, and the command palette are softly blurred, like looking through a window at the night sky.
+
 ## Color palette
 
 ### Night Sky (dark)
