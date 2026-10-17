@@ -151,10 +151,6 @@ body {
   transition: background-color 0.15s ease, color 0.15s ease;
 }
 
-.nav-file-title.is-active {
-  box-shadow: inset 2px 0 0 var(--interactive-accent);
-}
-
 html:has(body.theme-dark)::before,
 html:has(body.theme-dark)::after,
 body.theme-dark::before,
@@ -520,4 +516,43 @@ a.tag:hover {
 .workspace-ribbon .clickable-icon:hover {
   color: var(--text-accent);
   filter: drop-shadow(0 0 6px var(--interactive-accent));
+}
+
+.markdown-rendered .heading-collapse-indicator,
+.markdown-rendered .collapse-indicator.heading-collapse-indicator,
+.cm-fold-indicator {
+  display: none;
+}
+
+.nav-file-title,
+.nav-folder-title {
+  position: relative;
+  border-radius: var(--radius-s);
+}
+
+.nav-file-title.is-active,
+.tree-item-self.is-active {
+  background: linear-gradient(90deg, rgba(167, 139, 250, 0.2), rgba(167, 139, 250, 0.03) 90%);
+  box-shadow: none;
+  border-radius: var(--radius-s);
+  padding-right: 1.8em;
+  color: var(--text-accent);
+}
+
+.nav-file-title.is-active::after,
+.tree-item-self.is-active::after {
+  content: "\2726";
+  position: absolute;
+  right: 0.6em;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.65em;
+  color: var(--wonder-star);
+  text-shadow: 0 0 8px var(--wonder-star);
+  pointer-events: none;
+}
+
+.nav-file-title:not(.is-active):hover,
+.nav-folder-title:hover {
+  background-color: var(--background-modifier-hover);
 }
