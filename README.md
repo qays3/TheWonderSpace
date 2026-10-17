@@ -4,6 +4,8 @@ A calm, cosmic theme for [Obsidian](https://obsidian.md), built around soft purp
 
 Not loud, not neon, not tiring. Just a quiet, comfortable space to think and write in, like looking up at a clear night sky.
 
+![TheWonderSpace demo](assets/TheWonderSpace-demo.gif)
+
 ## Why "Wonder"?
 
 The name comes from the feeling of looking at the stars: calm, curious, and a little amazed. The theme tries to give you that same feeling while you work. Deep violet backgrounds, gentle lavender text, and small touches of warm gold and soft cyan, like distant stars.
