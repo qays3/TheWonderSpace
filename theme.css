@@ -154,3 +154,60 @@ body {
 .nav-file-title.is-active {
   box-shadow: inset 2px 0 0 var(--interactive-accent);
 }
+
+body.theme-dark::before,
+body.theme-dark::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  will-change: opacity;
+}
+
+body.theme-dark::before {
+  background-image:
+    radial-gradient(1.5px 1.5px at 40px 60px, #ffffff 50%, transparent 100%),
+    radial-gradient(1px 1px at 120px 210px, #ffffff 50%, transparent 100%),
+    radial-gradient(2px 2px at 260px 90px, #ffffff 50%, transparent 100%),
+    radial-gradient(1px 1px at 330px 300px, #ffffff 50%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 180px 350px, #ffffff 50%, transparent 100%),
+    radial-gradient(1px 1px at 390px 150px, #ffffff 50%, transparent 100%),
+    radial-gradient(4px 4px at 260px 90px, rgba(255, 255, 255, 0.35), transparent 100%);
+  background-size: 420px 420px;
+  opacity: 0.55;
+  animation: wonder-twinkle-a 5s ease-in-out infinite alternate;
+}
+
+body.theme-dark::after {
+  background-image:
+    radial-gradient(1px 1px at 90px 130px, #ffffff 50%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 310px 40px, #ffffff 50%, transparent 100%),
+    radial-gradient(1px 1px at 470px 260px, #ffffff 50%, transparent 100%),
+    radial-gradient(2px 2px at 150px 440px, #ffffff 50%, transparent 100%),
+    radial-gradient(1px 1px at 540px 500px, #ffffff 50%, transparent 100%),
+    radial-gradient(1.5px 1.5px at 380px 380px, #dcd0ff 50%, transparent 100%),
+    radial-gradient(4px 4px at 150px 440px, rgba(255, 255, 255, 0.3), transparent 100%);
+  background-size: 610px 610px;
+  opacity: 0.35;
+  animation: wonder-twinkle-b 7s ease-in-out -3s infinite alternate;
+}
+
+@keyframes wonder-twinkle-a {
+  0% { opacity: 0.2; }
+  50% { opacity: 0.6; }
+  100% { opacity: 0.9; }
+}
+
+@keyframes wonder-twinkle-b {
+  0% { opacity: 0.9; }
+  50% { opacity: 0.4; }
+  100% { opacity: 0.15; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.theme-dark::before,
+  body.theme-dark::after {
+    animation: none;
+  }
+}
