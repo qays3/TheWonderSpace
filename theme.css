@@ -1,0 +1,156 @@
+body {
+  --font-interface-theme: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-text-theme: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --radius-s: 6px;
+  --radius-m: 10px;
+  --radius-l: 14px;
+
+  --line-height-normal: 1.65;
+
+  --h1-size: 1.9em;
+  --h2-size: 1.6em;
+  --h3-size: 1.35em;
+  --h4-size: 1.15em;
+  --h5-size: 1.05em;
+  --h6-size: 1em;
+  --h1-weight: 650;
+  --h2-weight: 620;
+  --h3-weight: 600;
+}
+
+.theme-dark {
+  --accent-h: 256;
+  --accent-s: 90%;
+  --accent-l: 76%;
+
+  --background-primary: #1b1730;
+  --background-primary-alt: #211c3a;
+  --background-secondary: #15122a;
+  --background-secondary-alt: #1a1633;
+
+  --background-modifier-border: #2f2858;
+  --background-modifier-border-hover: #3d346e;
+  --background-modifier-border-focus: #a78bfa;
+  --background-modifier-hover: rgba(167, 139, 250, 0.10);
+  --background-modifier-active-hover: rgba(167, 139, 250, 0.18);
+  --background-modifier-form-field: #211c3a;
+  --background-modifier-cover: rgba(15, 12, 30, 0.75);
+
+  --text-normal: #e7e2f7;
+  --text-muted: #aaa2cd;
+  --text-faint: #7d75a3;
+  --text-accent: #b9a3ff;
+  --text-accent-hover: #cbbaff;
+  --text-on-accent: #17122b;
+  --text-selection: rgba(167, 139, 250, 0.28);
+  --text-highlight-bg: rgba(240, 214, 130, 0.25);
+
+  --interactive-normal: #2a2350;
+  --interactive-hover: #342c63;
+  --interactive-accent: #a78bfa;
+  --interactive-accent-hover: #b9a3ff;
+
+  --h1-color: #d9ccff;
+  --h2-color: #cbbaff;
+  --h3-color: #bdaaff;
+  --h4-color: #b09cf5;
+  --h5-color: #a38ee8;
+  --h6-color: #9684d6;
+
+  --link-color: #b9a3ff;
+  --link-color-hover: #cbbaff;
+  --link-external-color: #8fd3e0;
+  --link-external-color-hover: #aee4ee;
+  --tag-color: #c9b8ff;
+  --tag-background: rgba(167, 139, 250, 0.14);
+  --code-background: #141026;
+  --code-normal: #d3c8f5;
+  --blockquote-border-color: #7c5cd6;
+  --blockquote-background-color: rgba(124, 92, 214, 0.08);
+  --hr-color: #342c63;
+
+  --scrollbar-bg: transparent;
+  --scrollbar-thumb-bg: rgba(167, 139, 250, 0.18);
+  --scrollbar-active-thumb-bg: rgba(167, 139, 250, 0.32);
+
+  --graph-line: #3a3170;
+  --graph-node: #a78bfa;
+  --graph-node-unresolved: #6a6190;
+  --graph-node-focused: #f0d682;
+  --graph-node-tag: #8fd3e0;
+  --graph-node-attachment: #e9a0c8;
+}
+
+.theme-light {
+  --accent-h: 258;
+  --accent-s: 62%;
+  --accent-l: 58%;
+
+  --background-primary: #fbf9ff;
+  --background-primary-alt: #f4f0fc;
+  --background-secondary: #f1ecfb;
+  --background-secondary-alt: #eae4f8;
+
+  --background-modifier-border: #ddd4f2;
+  --background-modifier-border-hover: #cbbfe9;
+  --background-modifier-border-focus: #7c5cd6;
+  --background-modifier-hover: rgba(124, 92, 214, 0.07);
+  --background-modifier-active-hover: rgba(124, 92, 214, 0.13);
+  --background-modifier-form-field: #ffffff;
+
+  --text-normal: #2c2547;
+  --text-muted: #6a6190;
+  --text-faint: #9a92bd;
+  --text-accent: #6b46c9;
+  --text-accent-hover: #5835b0;
+  --text-on-accent: #ffffff;
+  --text-selection: rgba(124, 92, 214, 0.2);
+  --text-highlight-bg: rgba(240, 200, 90, 0.35);
+
+  --interactive-normal: #ece6f9;
+  --interactive-hover: #e2daf5;
+  --interactive-accent: #7c5cd6;
+  --interactive-accent-hover: #6b46c9;
+
+  --h1-color: #4a2fa0;
+  --h2-color: #5535b3;
+  --h3-color: #6340c4;
+  --h4-color: #7150d0;
+  --h5-color: #7f60d8;
+  --h6-color: #8d70de;
+
+  --link-color: #6b46c9;
+  --link-color-hover: #5835b0;
+  --tag-color: #5e3dbb;
+  --tag-background: rgba(124, 92, 214, 0.1);
+  --code-background: #f0eafb;
+  --blockquote-border-color: #9a7be8;
+  --blockquote-background-color: rgba(124, 92, 214, 0.05);
+  --hr-color: #ddd4f2;
+
+  --graph-line: #d3c8ef;
+  --graph-node: #7c5cd6;
+  --graph-node-focused: #d99a1c;
+}
+
+.markdown-rendered pre,
+.cm-s-obsidian .HyperMD-codeblock-bg {
+  border-radius: var(--radius-m);
+}
+
+.markdown-rendered blockquote {
+  border-radius: 0 var(--radius-m) var(--radius-m) 0;
+  padding: 0.4em 1em;
+}
+
+.nav-file-title,
+.nav-folder-title,
+.tree-item-self,
+.clickable-icon {
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.nav-file-title.is-active {
+  box-shadow: inset 2px 0 0 var(--interactive-accent);
+}
