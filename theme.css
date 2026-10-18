@@ -151,8 +151,8 @@ body {
   transition: background-color 0.15s ease, color 0.15s ease;
 }
 
-html:has(body.theme-dark)::before,
-html:has(body.theme-dark)::after,
+body.theme-dark .app-container::before,
+body.theme-dark .app-container::after,
 body.theme-dark::before,
 body.theme-dark::after {
   display: block;
@@ -188,7 +188,7 @@ body.theme-dark::after {
   animation: wonder-shine 10s ease-in-out infinite;
 }
 
-html:has(body.theme-dark)::before {
+body.theme-dark .app-container::before {
   inset: 0;
   background-image:
     radial-gradient(1px 9px at 420px 210px, #ffffff, transparent),
@@ -202,7 +202,7 @@ html:has(body.theme-dark)::before {
   animation: wonder-shine 14s ease-in-out -6s infinite;
 }
 
-html:has(body.theme-dark)::after {
+body.theme-dark .app-container::after {
   top: 14%;
   left: -220px;
   width: 160px;
@@ -235,11 +235,11 @@ html:has(body.theme-dark)::after {
 @media (prefers-reduced-motion: reduce) {
   body.theme-dark::before,
   body.theme-dark::after,
-  html:has(body.theme-dark)::before {
+  body.theme-dark .app-container::before {
     animation: none;
     opacity: 0.45;
   }
-  html:has(body.theme-dark)::after {
+  body.theme-dark .app-container::after {
     display: none;
   }
 }
@@ -535,17 +535,17 @@ a.tag:hover {
 .markdown-rendered h5,
 .markdown-rendered h6 { --wonder-ind: var(--text-accent); }
 
-.markdown-rendered .heading-collapse-indicator {
-  position: static !important;
-  display: inline-flex !important;
+body .markdown-rendered :is(h1, h2, h3, h4, h5, h6) .heading-collapse-indicator.collapse-indicator {
+  position: static;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   width: auto;
   height: auto;
-  margin: 0 0.45em 0 0 !important;
+  margin: 0 0.45em 0 0;
   padding: 0;
-  opacity: 1 !important;
-  transform: none !important;
+  opacity: 1;
+  transform: none;
   cursor: pointer;
   vertical-align: 0.15em;
   font-size: 0.6em;

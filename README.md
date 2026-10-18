@@ -106,4 +106,4 @@ Found a bug or have an idea? Open an [issue](https://github.com/qays3/TheWonderS
 
 ## License
 
-[MIT](LICENSE)
+[MIT](LICENSE.txt)
