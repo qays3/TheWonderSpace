@@ -1,29 +1,22 @@
 # TheWonderSpace
 
-A calm, cosmic theme for [Obsidian](https://obsidian.md), built around soft purples.
-
-Not loud, not neon, not tiring. Just a quiet, comfortable space to think and write in, like looking up at a clear night sky.
+A calm, cosmic theme for [Obsidian](https://obsidian.md). It turns your vault into a quiet space for thinking and writing, with small details that make everyday notes feel a little more alive.
 
 ![TheWonderSpace demo](assets/TheWonderSpace-demo.gif)
 
 ## Why "Wonder"?
 
-The name comes from the feeling of looking at the stars: calm, curious, and a little amazed. The theme tries to give you that same feeling while you work. Deep violet backgrounds, gentle lavender text, and small touches of warm gold and soft cyan, like distant stars.
+The name comes from the feeling of looking up at the night sky: calm, curious, and a little amazed. TheWonderSpace aims to bring that feeling to your notes without getting in the way of the writing. Everything is subtle, nothing flashes, and every effect can be switched off.
 
-## Features
+## What makes it different
 
-- **Calm purple palette.** Deep indigo-violet in dark mode, soft lilac in light mode.
-- **Easy on the eyes.** Contrast is balanced for long writing sessions, with no pure black and no pure white.
-- **Lavender heading scale.** Headings shift gently from light to deeper violet, so structure is clear without being harsh.
-- **Shining stars.** A few quiet stars breathe softly, some sparkle now and then, and a shooting star passes once in a while. Dark mode only, and it stays still if your system has reduced motion on.
-- **Starry graph view.** Nodes and links are styled like stars and constellations.
-- **Dark and light modes.** *Night Sky* (dark) and *Soft Dawn* (light).
-- **Rounded, soft shapes.** Code blocks, quotes, and buttons use smooth corners.
-- **Built on Obsidian's CSS variables.** Stable across updates and easy to customize.
+### A living sky
+- **Shining stars.** A few quiet stars breathe softly in the background. Some sparkle now and then, and a shooting star passes once in a while.
+- **Entrance animation.** Your vault fades and zooms in gently when it opens.
+- **Reduced motion.** If your system has reduced motion turned on, every animation stays off.
 
-## Made for wonder
-
-**Moon-phase tasks.** Checkboxes are little moons.
+### Moon-phase tasks
+Checkboxes are little moons that show how far along a task is.
 
 ```
 - [ ] New moon (to do)
@@ -33,7 +26,8 @@ The name comes from the feeling of looking at the stars: calm, curious, and a li
 - [!] Comet (important)
 ```
 
-**Cosmic callouts.** Four extra callout types on top of the usual ones:
+### Cosmic callouts
+Four extra callout types on top of the built-in ones:
 
 ```
 > [!star] Something worth remembering
@@ -42,43 +36,29 @@ The name comes from the feeling of looking at the stars: calm, curious, and a li
 > [!launch] Time to ship
 ```
 
-**Constellation touches.** Top-level headings carry a small star and a soft gradient, links sparkle when you hover them, and horizontal rules (`---`) become a line with a glowing star in the middle.
+### Star headings
+- In reading view, the star in front of a heading is its fold button. A glowing star means open, and a dim, turned star means folded.
+- The same style applies to fold markers in the editor.
+- Top-level headings get a soft gradient and a thin underline.
 
-**Warp-in entrance.** When your vault appears, it fades and zooms in softly from a slight blur. It stays off if your system has reduced motion turned on.
-
-**Frosted glass.** Menus, popups, and the command palette are softly blurred, like looking through a window at the night sky.
-
-## Color palette
-
-### Night Sky (dark)
-
-| Role | Color |
-|---|---|
-| Background | `#1b1730` |
-| Sidebar | `#15122a` |
-| Text | `#e7e2f7` |
-| Accent | `#a78bfa` |
-| Stars (highlights) | `#f0d682`, `#8fd3e0` |
-
-### Soft Dawn (light)
-
-| Role | Color |
-|---|---|
-| Background | `#fbf9ff` |
-| Sidebar | `#f1ecfb` |
-| Text | `#2c2547` |
-| Accent | `#7c5cd6` |
+### Details that make writing nicer
+- **Constellation dividers.** A horizontal rule (`---`) becomes a line with a glowing star in the middle.
+- **Sparkling links.** A small star pops in when you hover over a link in reading view.
+- **Soft active line.** The line you are writing on has a gentle glow, and the cursor is easy to find.
+- **Round tags.** Tags are pills that glow on hover.
+- **Tidy tables, quotes, and inline code.** Rounded corners and clear structure.
+- **Calm file explorer.** The active note is marked with a small glowing star instead of a harsh bar.
+- **Starry graph view.** Notes read as stars connected into constellations.
+- **Frosted glass.** Menus, popups, and the command palette are softly blurred.
 
 ## Installation
 
-### From the community themes (after approval)
-
+### From the community themes
 1. Open **Settings → Appearance**.
 2. Under **Themes**, click **Manage**.
 3. Search for **TheWonderSpace** and click **Install and use**.
 
 ### Manual installation
-
 1. Download `theme.css` and `manifest.json` from the [latest release](https://github.com/qays3/TheWonderSpace/releases/latest).
 2. In your vault, create the folder `.obsidian/themes/TheWonderSpace/`.
 3. Put both files inside it.
@@ -86,19 +66,33 @@ The name comes from the feeling of looking at the stars: calm, curious, and a li
 
 ## Customization
 
-You can tweak the theme with a CSS snippet in `.obsidian/snippets/`. For example, to change the accent color:
+You can change the theme with a CSS snippet in `.obsidian/snippets/`.
+
+To turn off the stars while keeping everything else:
 
 ```css
-.theme-dark {
-  --interactive-accent: #c084fc;
-  --text-accent: #d8b4fe;
+body.theme-dark::before,
+body.theme-dark::after,
+body.theme-dark .app-container::before,
+body.theme-dark .app-container::after {
+  display: none;
 }
 ```
 
-## Recommended settings
+To turn off the entrance animation:
 
-- Set **Appearance → Base color scheme** to *Adapt to system* so the theme follows your day and night.
-- The theme uses **Inter** for text. If it isn't installed, it falls back to your system font.
+```css
+.app-container > .horizontal-main-container {
+  animation: none;
+}
+```
+
+## Good to know
+
+- The theme works in dark and light mode. The shining stars appear in dark mode only.
+- It uses the **Inter** font for text. If Inter isn't installed, it falls back to your system font.
+- Works with Obsidian 1.0.0 and newer.
+- Tested on desktop. Mobile feedback is welcome.
 
 ## Contributing
 
@@ -106,4 +100,4 @@ Found a bug or have an idea? Open an [issue](https://github.com/qays3/TheWonderS
 
 ## License
 
-[MIT](LICENSE.txt)
+MIT
